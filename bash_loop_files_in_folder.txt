@@ -1,0 +1,12 @@
+
+
+
+# comment out the source lines, (the number in the sed is the line number).
+sed -i '6s/^/# /' /etc/apt/sources.list
+
+
+# copy the files to usr/local for publis execution and remove their extension
+for i in $HOME/dev/*.sh
+do
+     cp -a $i ${i%%.sh} /usr/local/bin/
+done
